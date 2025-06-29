@@ -160,7 +160,7 @@
         <p><strong>Entry fee:</strong> Rs 300</p>
         <p><strong>Prize Pool:</strong> Rs 2,000</p>
         <p><strong>Mode:</strong> duo, full map</p>
-          <p> wining  duo will get free entry in next upcoming event</p>
+          <p> winning duo will get free entry in next upcoming event</p>
         <p>Winning Prize will be sent to the transaction ID after the match ends.</p>
       </div>
        <div class="tournament-card">
@@ -189,12 +189,12 @@
   <section id="register">
     <h2>📝 Duo Registration</h2>
     <p class="note">
-  📌 Pay Entry fee Rs. 200 via mobile banking or eSewa before regestering<br />
-</p>
-<div style="text-align:center; margin-bottom: 20px;">
-  <img src="https://i.postimg.cc/6pYQVRgM/Screenshot-2025-06-28-125325.png" alt="QR Code for Payment" style="max-width:200px; border: 2px solid var(--primary); border-radius: 10px;"/>
-  <p style="font-size: 0.9em; color: #ccc;">Scan this QR code to pay</p>
-</div>
+      📌 Pay Entry fee Rs. 200 via mobile banking or eSewa before registering<br />
+    </p>
+    <div style="text-align:center; margin-bottom: 20px;">
+      <img src="https://i.postimg.cc/6pYQVRgM/Screenshot-2025-06-28-125325.png" alt="QR Code for Payment" style="max-width:200px; border: 2px solid var(--primary); border-radius: 10px;"/>
+      <p style="font-size: 0.9em; color: #ccc;">Scan this QR code to pay</p>
+    </div>
 
     <button id="registerBtn" onclick="toggleRegister(this)">Register Duo</button>
 
@@ -243,7 +243,7 @@
       <button onclick="confirmSubmit()">Confirm & Submit</button>
     </div>
 
-    <form id="finalForm" class="hidden" action="https://formsubmit.co/rojinak633@gmail.com" method="POST">
+    <form id="finalForm" class="hidden" method="POST" onsubmit="submitForm(event)">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="">
     </form>
@@ -306,6 +306,12 @@
     }
 
     function confirmSubmit() {
+      // Reset hidden inputs to avoid duplicates
+      finalForm.innerHTML = `
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="">
+      `;
+
       for (const key in formData) {
         const input = document.createElement('input');
         input.type = 'hidden';
@@ -313,9 +319,37 @@
         input.value = formData[key];
         finalForm.appendChild(input);
       }
+
       review.classList.add('hidden');
+
+      // Show confirmation section
       confirmSec.classList.remove('hidden');
-      finalForm.submit();
+
+      // Call submitForm manually to handle AJAX and alert
+      submitForm(new Event('submit'));
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+
+      const formDataToSend = new FormData(finalForm);
+      const url = 'https://formsubmit.co/ajax/rojinak633@gmail.com'; // AJAX endpoint
+
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formDataToSend
+      })
+      .then(response => {
+        if (response.ok) {
+          finalForm.reset();
+        }
+      })
+      .catch(error => {
+       
+      });
+
+      return false;
     }
   </script>
 </body>
