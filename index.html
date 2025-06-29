@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AKS Esports - Duo Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ffcc00;
+      --accent: #ff0055;
+      --dark: #0d0d0d;
+    }
+    body {
+      margin: 0;
+      background: var(--dark);
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+    }
+    header {
+      text-align: center;
+      background: linear-gradient(120deg, #111, #222);
+      padding: 40px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      text-shadow: 0 0 10px var(--accent);
+    }
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      gap: 20px;
+    }
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+    .bg-card {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .bg-card::before {
+      content: '';
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0, 0, 0, 0.65);
+    }
+    .bg-card > .content {
+      position: relative;
+      padding:20px;
+    }
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .tournament-card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+    }
+    form, .review, .confirmation {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea, select, button {
+      font-family: inherit;
+    }
+    input, textarea, select {
+      padding:10px;
+      border:none;
+      border-radius:5px;
+    }
+    input:focus, textarea:focus {
+      outline:2px solid var(--primary);
+    }
+    button {
+      background: var(--primary);
+      color: black;
+      font-weight: bold;
+      padding:12px;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover {
+      background: var(--accent);
+      color: white;
+    }
+    .note {
+      color: #ddd;
+      font-size:0.95em;
+      margin-top:-10px;
+      padding-bottom:10px;
+      text-align:center;
+    }
+    .hidden {
+      display: none;
+    }
+    .review p {
+      margin:5px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      margin-top: 40px;
+      color: #aaa;
+    }
+    #rulesSection p {
+      margin: 5px 0;
+    }
+    #rulesSection label {
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AKS Esports</h1>
+    <p>Free Fire & PUBG Official Tournaments</p>
+  </header>
+
+  <nav>
+    <a href="#ff">Free Fire</a>
+    <a href="#pubg">PUBG</a>
+    <a href="#register">Register Duo</a>
+  </nav>
+
+  <section id="ff" class="bg-card" style="background-image: url('https://i.pinimg.com/736x/6e/17/ab/6e17abefeeda6f4a912257c3762ec59a.jpg');">
+    <div class="content">
+      <h2>🔥 Free Fire Tournament</h2>
+      <div class="tournament-card">
+        <p><strong>Date:</strong> July 5, 2025</p>
+        <p><strong>Time:</strong>  9:00 AM </p>
+        <p><strong>Entry fee:</strong> Rs 300</p>
+        <p><strong>Prize Pool:</strong> Rs 2,000</p>
+        <p><strong>Mode:</strong> duo, full map</p>
+          <p> wining  duo will get free entry in next upcoming event</p>
+        <p>Winning Prize will be sent to the transaction ID after the match ends.</p>
+      </div>
+       <div class="tournament-card">
+         UPCOMING EVENT
+        <p><strong>Date:</strong> August, 2025</p>
+        <p><strong>Entry fee:</strong> Rs 300</p>
+        <p><strong>Prize Pool:</strong> Rs 5,000</p>
+        <p><strong>Mode:</strong> squad, full map</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pubg" class="bg-card" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuyRUt5IK-hGLCpjH1ZMpqJh2xC-ep4S1lbA&s.jpg');">
+    <div class="content">
+      <h2>🎯 PUBG Mobile Tournament</h2>
+       <h2> ⚠️  unavailable right now </h2>
+      <div class="tournament-card">
+        <p><strong>Date:</strong> July 5, 2025</p>
+        <p><strong>Entry fee:</strong> Rs 300</p>
+        <p><strong>Prize Pool:</strong> Rs 2,000</p>
+        <p><strong>Mode:</strong> duo, full map</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>📝 Duo Registration</h2>
+    <p class="note">
+  📌 Pay Entry fee Rs. 200 via mobile banking or eSewa before regestering<br />
+</p>
+<div style="text-align:center; margin-bottom: 20px;">
+  <img src="https://i.postimg.cc/6pYQVRgM/Screenshot-2025-06-28-125325.png" alt="QR Code for Payment" style="max-width:200px; border: 2px solid var(--primary); border-radius: 10px;"/>
+  <p style="font-size: 0.9em; color: #ccc;">Scan this QR code to pay</p>
+</div>
+
+    <button id="registerBtn" onclick="toggleRegister(this)">Register Duo</button>
+
+    <form id="duoForm" class="hidden" onsubmit="return validateForm(event)">
+      <input type="email" name="email" placeholder="Your Email" required />
+      <select name="game" required>
+        <option value="" disabled selected>Select Game</option>
+        <option value="Free Fire">Free Fire</option>
+        <option value="PUBG Mobile">PUBG Mobile</option>
+      </select>
+      <input type="text" name="duo_name" placeholder="Duo Name" required />
+      <input type="text" name="player1" placeholder="Player 1 Name" required />
+      <input type="text" name="player1_uid" placeholder="Player 1 UID" required />
+      <input type="text" name="player2" placeholder="Player 2 Name" required />
+      <input type="text" name="player2_uid" placeholder="Player 2 UID" required />
+      <textarea name="payment_info" rows="3" placeholder="eSewa or Mobile Banking Transaction ID" required></textarea>
+      <input type="text" name="transaction_code" placeholder="Transaction Code" required />
+      
+      <!-- Rules Button and Section -->
+      <button type="button" onclick="toggleRules(this)">Rules</button>
+      <div id="rulesSection" class="hidden">
+        <p>Game will be based on best of three, with a 5-minute break after each match.</p>
+        <p>1. Room ID and password will be provided 15 minutes earlier.</p>
+        <p>2. Game will start at the exact scheduled time.</p>
+        <p>3. Each duo must join the same slot number sent via email.</p>
+        <p>4. 1 elimination = 1 point</p>
+        <p>5. Booyah = 10 points</p>
+        <p>6. 2nd place = 6 points</p>
+        <p>7. 3rd place = 5 points</p>
+        <p>8. 4th place = 4 points</p>
+        <p>9. 5th place = 3 points</p>
+        <p>10. 6th place = 2 points</p>
+        <p>11. Other places = 0 points</p>
+      </div>
+      <label>
+        <input type="checkbox" id="acceptRules" />
+        I accept all the tournament rules.
+      </label>
+      <button type="submit">Review & Submit</button>
+    </form>
+
+    <div class="review hidden" id="reviewSection">
+      <h3>✅ Review Your Details</h3>
+      <div id="reviewData"></div>
+      <button onclick="editForm()">Edit</button>
+      <button onclick="confirmSubmit()">Confirm & Submit</button>
+    </div>
+
+    <form id="finalForm" class="hidden" action="https://formsubmit.co/rojinak633@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://example.com/thank-you.html">
+    </form>
+
+    <div class="confirmation hidden" id="confirmationSection">
+      <h3>🎉 Registration Submitted!</h3>
+      <p>We'll contact you via email soon. Thank you!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AKS Esports. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('duoForm');
+    const finalForm = document.getElementById('finalForm');
+    const review = document.getElementById('reviewSection');
+    const confirmSec = document.getElementById('confirmationSection');
+    const reviewData = document.getElementById('reviewData');
+    const rulesSection = document.getElementById('rulesSection');
+
+    let formData = {};
+
+    function toggleRules(button) {
+      rulesSection.classList.toggle('hidden');
+      button.textContent = rulesSection.classList.contains('hidden') ? 'Rules' : 'Hide Rules';
+    }
+
+    function toggleRegister(button) {
+      form.classList.toggle('hidden');
+      button.textContent = form.classList.contains('hidden') ? 'Register Duo' : 'Hide Registration';
+      if (!form.classList.contains('hidden')) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function validateForm(e) {
+      const acceptRules = document.getElementById('acceptRules');
+      if (!acceptRules.checked) {
+        alert("⚠️ Please accept the rules before submitting.");
+        return false;
+      }
+
+      e.preventDefault();
+      formData = Object.fromEntries(new FormData(form).entries());
+      reviewData.innerHTML = '';
+      for (const key in formData) {
+        const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        reviewData.innerHTML += `<p><strong>${label}:</strong> ${formData[key]}</p>`;
+      }
+      form.classList.add('hidden');
+      review.classList.remove('hidden');
+      return false;
+    }
+
+    function editForm() {
+      review.classList.add('hidden');
+      form.classList.remove('hidden');
+    }
+
+    function confirmSubmit() {
+      for (const key in formData) {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = formData[key];
+        finalForm.appendChild(input);
+      }
+      review.classList.add('hidden');
+      confirmSec.classList.remove('hidden');
+      finalForm.submit();
+    }
+  </script>
+</body>
+</html>
